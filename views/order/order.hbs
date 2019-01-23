@@ -1,0 +1,295 @@
+<div class="container-fluid">
+    <div class="row" aria-multiselectable="true" id="accordion" role="tablist">  
+         <div class="col-md-9"> 
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Veg Staters 
+                            </a>
+                        </h5>
+                    </div>
+                   
+            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" >
+                      <div class="card-body">          
+                    {{#each item_veg}}
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTwo">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Non Veg Staters 
+                            </a>
+                        </h5>
+                    </div>
+                     <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" >
+                <div class="card-body">                    
+                  {{#each item_non_veg}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingThree">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseThree" data-parent="#accordion" aria-expanded="false" aria-controls="collapseThree">
+                               Tandoori Grill Specials
+                            </a>
+                        </h5>
+                    </div>
+                     <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" >
+                 <div class="card-body">                    
+                  {{#each item_tandoori}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingFour">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseFour" data-parent="#accordion" aria-expanded="false" aria-controls="collapseFour">
+                               Main Course 
+                            </a>
+                        </h5>
+                    </div>
+                    
+            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" >
+                 <div class="card-body">                    
+                  {{#each item_main_course}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingFive">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseFive" data-parent="#accordion" aria-expanded="false" aria-controls="collapseFive">
+                                Gurkha Special Main Course
+                            </a>
+                        </h5>
+                    </div>
+                     <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" >
+                 <div class="card-body">                    
+                  {{#each item_gorkha_special}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingSix">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseSix" data-parent="#accordion" aria-expanded="false" aria-controls="collapseSix">
+                                Biryani Dishes
+                            </a>
+                        </h5>
+                    </div>
+                     
+            <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix" >
+                 <div class="card-body">                    
+                  {{#each item_briyani_dishes}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingSeven">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseSeven" data-parent="#accordion" aria-expanded="false" aria-controls="collapseSeven">
+                                Vegetarian
+                            </a>
+                        </h5>
+                    </div>
+                    
+            <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" >
+                 <div class="card-body">                    
+                  {{#each item_Vegetarian}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingEight">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseEight" data-parent="#accordion" aria-expanded="false" aria-controls="collapseEight">
+                                Rice 
+                            </a>
+                        </h5>
+                    </div>
+                     
+            <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight" >
+                 <div class="card-body">                    
+                  {{#each item_rice}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingNine">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseNine" data-parent="#accordion" aria-expanded="false" aria-controls="collapseNine">
+                                Bread
+                            </a>
+                        </h5>
+                    </div>
+                       <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine" >
+                 <div class="card-body">                    
+                  {{#each item_bread}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTen">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseTen" data-parent="#accordion" aria-expanded="false" aria-controls="collapseTen">
+                                Kid S Menu
+                            </a>
+                        </h5>
+                    </div>
+                     <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" >
+                 <div class="card-body">                    
+                  {{#each item_kid_s}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>            
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingEleven">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseEleven" data-parent="#accordion" aria-expanded="false" aria-controls="collapseEleven">
+                               Condiments
+                            </a>
+                        </h5>
+                    </div>
+                     <div id="collapseEleven" class="collapse" role="tabpanel" aria-labelledby="headingEleven" >
+                 <div class="card-body">                    
+                  {{#each item_condiments}}                  
+                    <h4> {{this.menuItem}} </h4>
+                    <div class="clearfix">
+                        <div class="pull-left">{{this.itemDescription}} </div> 
+                        <div class="pull-right">
+                             <a href="/order/add-to-cart/{{this._id}}"><button type="button" class="btn btn-outline bg-info"> £{{this.price}}</button> </a>
+                         </div>
+                    </div>  <hr>
+                     {{/each}}
+                </div>
+            </div>
+                </div>  
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center"> 
+                <div class="card-header text-info">
+                   <h1><i class="fa fa-shopping-cart" aria-hidden="true"></i></h1> 
+                    <h3> Total item in Cart
+                     <span class="badge badge-pill badge-danger">{{session.cart.totalQty}}</span>
+                  </h3> 
+                </div>  
+
+                
+                <form id="pinform">      
+                    <div class="card-body">  
+               
+                       <div class="form-group row">
+                            <div class="col-12 col-lg-7">
+                                <input type="text"  name="pinCode" class="form-control" id="articleURLko" placeholder="PE11 1BE" required >
+                            </div>
+                            <div class="col-12 col-lg-4">
+                             <button onclick="pinCodeCheck()" type="button" class="btn btn-outline-success">Check Out</button>
+                            </div>
+                        </div> 
+                       
+                         <div>           
+                            <b>  Delivery Charge </b>
+                            <span class="text-danger"><b> <span id="pinCheck"> £00</span> </b>
+                            </span>
+                            {{!-- <span class="badge badge-pill badge-success"><b> <i class="fa fa-eur" aria-hidden="true"></i> <span id="pinCheck">00</span> </b>
+                            </span> --}}
+                         </div>
+                   <hr>
+                         <div class="text-success">
+                           Note:- <b> 10% off your food on all collection orders</b>
+                         </div>
+              
+                    </div>
+                    <div class="card-footer"> 
+                         <a href="/order/fullcart"> <button type="button" class="btn btn-outline-success">View Cart Item</button> </a>
+                    </div>
+                 </form>
+            </div>
+        </div>
+    </div>
+</div>   
+

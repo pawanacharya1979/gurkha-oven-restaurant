@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+     {{#each deliver_item}}
+        <div class="col-12 col-md-6">
+            <div class="card my-2">
+                    <div class="card-header">
+                        <h3> Item Ordered by <b class="text-info">{{this.fname}}-{{this.lname}}</b></h3>
+                    </div>
+                    <div class="card-body">                          
+                          Phone:- <b>{{this.phone}}</b> <br> <hr class="my-1">
+                          Email:- <b>{{this.email}}</b> <br>
+                          <hr class="my-1 bg-danger">
+                          <div>
+                              Ordered Information need to store and fetech from database                              
+                          </div>
+                 
+                           <hr class="my-1 bg-danger">
+                          Delivery:Note :- <b>{{this.deliveryNote}}</b> <br>
+                          Food:Note :- <b>{{this.foodNote}}</b>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="clearfix">
+                            <div class="pull-left text-success">
+                                <b> Delivery-Time:- <strong>{{this.deliveryTime}}</strong></b>
+                            </div>
+                            <div class="pull-right">
+                               <a href="/order/delete"> <button type="button" class="btn btn-outline-success">Delete</button> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
+
+

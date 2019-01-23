@@ -1,0 +1,187 @@
+<h1 class="text-center">Order Checkout</h1> 
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Checkout Form</h4>
+                </div>
+                <div class="card-body">
+                    <form  id="pinform" action="/deliver/checkout" method="POST">
+                        <div class="form-group row">
+                            <label class="col-4 col-md-3 col-form-label">
+                                <b>First Name</b>
+                            </label>
+                            <div class="col-8 col-md-5">
+                                <input type="text" name="fname" class="form-control" id="articleURLko" placeholder="First Name" required >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4 col-md-3 col-form-label">
+                                <b>Last Name</b>
+                            </label>
+                            <div class="col-8 col-md-5">
+                                <input type="text" name="lname" class="form-control" id="articleURLko" placeholder="Surname" required >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4 col-md-3 col-form-label">
+                                <b>Phone Number</b>
+                            </label>
+                            <div class="col-8 col-md-5">
+                                <input type="number" name="phone" class="form-control" id="articleURLko" placeholder="Phone Number" required >
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4 col-md-3 col-form-label">
+                                <b>Email</b>
+                            </label>
+                            <div class="col-8 col-md-5">
+                                <input type="email" name="email" class="form-control" id="articleURLko" placeholder="Email" required >
+                            </div>
+                        </div>
+                               
+                         <div class="form-group row">
+                            <label for="exampleFormControlTextarea1" class="col-4 col-md-3 col-form-label"><b>Address</b></label>
+                            <div class="col-8 col-md-5">
+                                <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3" required ></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-4 col-md-3 col-form-label">
+                                <b>Order Type </b>
+                            </label>
+                            <div class="col-8 col-md-5">
+                                <select class="form-control"  name="ordType" class="form-control" >
+                                    <option>Collect Order</option>
+                                    <option>Delivery Order</option>                                    
+                                </select>
+                            </div>
+                        </div>
+
+
+                        
+                         <div class="form-group row">
+                            <label for="exampleFormControlSelect2" class="col-4 col-md-3 col-form-label"><b>Delivery || Collection Time</b></label> 
+                            <div class="col-8 col-md-5">
+                                <input type="time" name="deliveryTime" class="form-control" id="articleURLko" value="17:00" required >                               
+                            </div>                     
+                        </div>
+                         <div class="form-group row">
+                            <label for="exampleFormControlTextarea1" class="col-4 col-md-3 col-form-label"><b>Food Note</b></label>
+                            <div class="col-8 col-md-5">
+                                <textarea class="form-control" name="foodNote" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label for="exampleFormControlTextarea1" class="col-4 col-md-3 col-form-label"><b>Delivery Note</b></label>
+                            <div class="col-8 col-md-5">
+                                <textarea class="form-control" name="deliveryNote" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4 col-md-3 col-form-label">
+                                <b>Voucher</b>
+                            </label>
+                            <div class="col-8 col-md-5">
+                                <input type="text"  name="voucher" class="form-control" id="articleURLko" placeholder="Enter Voucher Code">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-4 col-md-3 col-form-label">
+                                <b>Enter Post-Code</b>
+                            </label>
+                            <div class="col-8 col-md-4">
+                                <input type="text"  name="pinCode" class="form-control" placeholder="Only for Delivery">
+                            </div>
+                            <div class="col-12 col-md-3">
+                             <button onclick="pinCodeCheck()" type="button" class="btn btn-outline-success">Check</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 col-md-3">
+                             <b>  Delivery Charge </b>  
+                            </div>                           
+                            <div class="col-8 col-md-5 form-check fm">
+                             <label class="form-check-label fm-rm">
+                                <input class="form-check-input" type="radio"  name="deliveryCost" id="inlineRadio1" value="" checked > 
+                                  <h4 class="text-danger">
+                                     <b> £ <span id="pinCheck">00</span> </b>                                    
+                                  </h4> 
+                             </label>
+                            </div>
+                         </div>
+
+                         <div class="form-group row">
+                            <div class="col-4 col-md-3">
+                             <b>  Total Item Cost </b>  
+                            </div>                           
+                            <div class="col-8 col-md-5 form-check fm">
+                             <label class="form-check-label fm-rm">
+                                <input class="form-check-input" type="radio"  name="totalPriceCost" id="inlineRadio1" value="{{totalPrice}}" checked > 
+                                 <h4>
+                                      <span class="badge badge-pill badge-info"><b> £ {{totalPrice}} </b>
+                                      </span> 
+                                 </h4> 
+                             </label>
+                            </div>
+                         </div>
+
+                         <div class="text-success text-center">
+                            <h4> Note:- <span class="text-danger">10%</span>  off your food on all collection orders</h4>
+                         </div> 
+                        
+                         
+                         <div class="form-group row fm-rmno">
+                             <input type="hidden" name="pcount" value="{{products.length}}"/>
+                                  {{#each products}}                     
+                            <div class="col-8 col-md-5 form-check">
+                             <label class="form-check-label">
+                                <input class="form-check-input" type="radio"  name="orderedItem{{@index}}" id="inlineRadio1" value="{{this.item.menuItem}}" checked > 
+                                  <h4>
+                                     <span class="badge badge-pill badge-danger"><b> {{this.item.menuItem}} </b>
+                                     </span>
+                                  </h4> 
+                            
+                            
+                                <input class="form-check-input" type="radio"  name="orderedQty{{@index}}" id="inlineRadio1" value="{{ this.qty }}" checked > 
+                                  <h4>
+                                     <span class="badge badge-pill badge-danger"><b>  {{ this.qty }} </b>
+                                     </span>
+                                  </h4> 
+                           
+                                     
+                                <input class="form-check-input" type="radio"  name="orderedPrice{{@index}}" id="inlineRadio1" value="{{ this.price }}" checked > 
+                                  <h4>
+                                     <span class="badge badge-pill badge-danger"><b> {{ this.price }}</b>
+                                     </span>
+                                  </h4> 
+                           
+                           </label>
+                            </div>
+                             {{/each}}
+                         </div>
+                       
+                      
+                                                                
+
+                        <div class="form-group row text-center pt-3">
+                                <div class="offset-sm-2 col-sm-10">
+                                    <button type="submit" class="btn btn-outline-success mx-2"> Order </button>
+                                    <button type="reset" class="btn btn-outline-danger mx-2"> Reset </button>
+                                </div>
+                            </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

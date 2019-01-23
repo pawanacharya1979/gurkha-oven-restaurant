@@ -1,0 +1,27 @@
+{
+  "name": "gurkhaoven",
+  "version": "1.0.0",
+  "description": "Restaurent ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-promise": "^0.4.0",
+    "express-session": "^1.15.6",
+    "jquery": "^3.2.1",
+    "mongoose": "^4.13.6",
+    "node-datetime": "^2.0.6",
+    "nodemailer": "^4.6.3",
+    "popper.js": "^1.12.9",
+    "tether": "^1.4.3"
+  }
+}

@@ -1,0 +1,75 @@
+{{#if products}}
+<div class="container">
+    <div class="row">
+        <div class="col-2 d-none d-md-block"></div> 
+        <div class="col-12 col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3 class="text-success">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Cart List
+                        <span class="badge badge-pill badge-danger">{{session.cart.totalQty}}</span>
+                    </h3>
+                </div>
+                <div class="card-body">
+                    {{!--
+                    <button type="button" class="btn">hehe</button> --}}
+                 {{#each products}}
+                    <blockquote class="blockquote">
+                         <p class="mb-0"><b> {{this.item.menuItem}}</b></p>
+                          <div>
+                        Quantity:
+                        <span class="badge badge-pill badge-info"><b> {{ this.qty }} </b></span> 
+                        <a href="/order/reduce/{{this.item._id}}"><span class="badge badge-secondary">-1</span> </a>
+                        <a href="/order/remove-all/{{this.item._id}}"><span class="badge badge-secondary">remove all</span> </a>
+                        <a href="/order/add/{{this.item._id}}"><span class="badge badge-secondary">+1</span> </a>
+                        
+                    </div>
+                    <div>
+                        Price: 
+                        <span class="badge badge-pill badge-info"><b> £ {{this.price}} </b></span>   
+                    </div>
+                    </blockquote> <hr>
+               {{/each}}
+
+                </div>
+                <div class="card-footer">
+                    <div class="clearfix">
+                    <h3 class="pull-left">Total Cost :-
+                        <span class="badge badge-pill badge-info"><b> £ {{totalPrice}} </b></span>                          
+                    </h3>
+                    {{!-- <div class="pull-right">£
+                     <a href="/order/checkout"> <button type="button" class="btn btn-outline-success">Order</button> </a>
+                    </div> --}}
+                    </div>
+                    
+                    <hr>
+                    <div class="text-center">
+                        <div>
+                           <a href="/"><button class="btn btn-outline-info"> Order More Item</button> </a>
+                        
+                           <a href="/order/checkout"> <button type="button" class="btn btn-outline-success">Order Now</button> </a>
+                        </div>                      
+                    </div>
+                 
+                 
+                </div>
+            </div>
+        </div>
+        <div class="col-2 d-none d-md-block"></div>        
+    </div>
+</div>
+
+
+
+{{else}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center my-3 text-danger">
+                 <h1> Cart Item Is Empty</h1>
+                  <a href="/"><button class="btn btn-outline-info mt-3"> Order </button> </a>
+        </div>
+    </div>
+</div>
+
+{{/if}}

@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+     {{#each deliver_item}}
+        <div class="col-12 col-md-6">
+            <div class="card my-2">
+                    <div class="card-header">
+                        <h3> Item Ordered by <b class="text-info">{{this.fname}}-{{this.lname}}</b></h3>
+                        <h5> Ordered on : <b> {{this.time}} </b> </h5>
+                    </div>
+                    <div class="card-body">                          
+                          Phone :- <b>{{this.phone}}</b> <br> <hr class="my-1">
+                          Email :- <b>{{this.email}}</b> <br>
+                          <hr class="my-1 bg-danger">
+                          <div class="text-center">
+                            <h5 class="text-success"><b>Ordered Information</b></h5>
+                             From PostCode :- <b>{{this.pinCode}}</b>  <br>  
+                                From Address :- <b>{{this.address}}</b>  <br>  
+                            
+                              Delivery || Collection Time :- <strong>{{this.deliveryTime}}</strong>  <br>
+                              Order Type :- <strong>{{this.ordType}}</strong> 
+                             <hr>
+							  <div class="table-responsive">
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                <th scope="col">Item:</th>{{#each this.orderedItem}}
+                                
+                                    <td>{{this}}</td>
+                                
+                                {{/each}}
+                                </tr>
+                                <tr>
+                                <th scope="col">Qty:</th>{{#each this.orderedQty}}
+                                
+                                    <td>{{this}}</td>
+                                 
+                                
+                                {{/each}}
+                                </tr>
+                                <tr>
+                                <th scope="col">Price:</th>{{#each this.orderedPrice}}
+                                
+                                    <td>{{this}}</td>
+                                 
+                                
+                                {{/each}}
+                            </thead>
+                            
+                        </table>
+                          </div>
+                             <h5 class="text-success">  Total-Price </h5> : <b>{{this.totalPriceCost}} </b> <br>
+							  </div>
+                 
+                           <hr class="my-1 bg-danger">
+                          Food:Note :- <b>{{this.foodNote}}</b><br>
+                          Delivery:Note :- <b>{{this.deliveryNote}}</b> 
+
+                    </div>
+                    <div class="card-footer">
+                        {{!-- <div class="clearfix">
+                            <div class="pull-left text-success">
+                                
+                            </div>
+                            <div class="pull-right">
+                              
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
+
+
